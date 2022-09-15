@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/footer.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -18,6 +19,38 @@
     
     <?php 
         require_once "submodules/navbar.php";
+        require_once "submodules/_dbconnect.php";
+
+        if (isset($_POST['contact_login'])) {
+            $name = $_POST['name'];
+            $message = $_POST['message'];
+            $email = $_POST['email'];
+            
+            $sql = "INSERT INTO contact VALUES ('" . $name . "', '" . $message . "', '" . $email . "')";
+            if ($conn->query($sql) == TRUE) {
+                echo '
+                <script>
+                    swal({
+                        title: "Query Successful",
+                        text: "Your query has been registered successfully",
+                        icon: "success",
+                    });
+                </script>
+                ';
+            }
+
+            else {
+                echo '
+                <script>
+                    swal({
+                        title: "Query not Successful",
+                        text: "We have encountered an error with your query",
+                        icon: "warning",
+                    });
+                </script>
+                ';
+            }
+        }
     ?>
     
     <section class="contact">
@@ -43,19 +76,19 @@
                 </div>
             </div>
             <div class="contactForm">
-                <form>
+                <form method="POST">
                     <h2>Send Message</h2>
                     <div class="inputBox">
-                        <input type="text" placeholder="Full Name" required="required">
+                        <input type="text" name="name" placeholder="Full Name" required="required">
                     </div>
                     <div class="inputBox">
-                        <input type="email" placeholder ="Email" required="required">
+                        <input type="email" name="email" placeholder ="Email" required="required">
                     </div>
                     <div class="inputBox">
-                        <textarea name="" id=""placeholder="Type your Message..." required="required"></textarea>
+                        <textarea name="message" id=""placeholder="Type your Message..." required="required"></textarea>
                     </div>
                     <div class="inputBox">
-                        <input type="submit" value="Send">
+                        <input type="submit"  name="contact_login" value="Send">
                     </div>
                 </form>
             </div>
