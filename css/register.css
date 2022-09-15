@@ -6,12 +6,12 @@
   font-family: 'Poppins', sans-serif;
 }
 .entire{
-  min-height: 500px;
+  min-height: 700px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.login-form{
+.Register-form{
   position: relative;
   max-width: 430px;
   width: 100%;
@@ -20,13 +20,13 @@
   border-radius: 6px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
-.login-form h2{
+.Register-form h2{
   position: relative;
   font-size: 22px;
   font-weight: 600;
   color: #1b1b1b;
 }
-.login-form h2::before{
+.Register-form h2::before{
   content: '';
   position: absolute;
   left: 0;
@@ -36,14 +36,14 @@
   border-radius: 12px;
   background: #1b1b1b
 }
-.login-form form{
+.Register-form form{
   margin-top: 30px;
 }
-.login-form form .login-field{
+.Register-form form .Register-field{
   height: 52px;
   margin: 18px 0;
 }
-form .login-field input{
+form .Register-field input{
   height: 100%;
   width: 100%;
   outline: none;
@@ -56,20 +56,20 @@ form .login-field input{
   border-radius: 6px;
   transition: all 0.3s ease;
 }
-.login-field input:focus,
-.login-field input:valid{
+.Register-field input:focus,
+.Register-field input:valid{
   border-color:#1b1b1b;
 }
-form .login-text h3{
+form .Register-text h3{
  color: #1b1b1b;
  width: 100%;
  text-align: center;
  font-size: 20px;
 }
-form .login-text h3 a{
+form .Register-text h3 a{
   color: #1b1b1b;
   text-decoration: none;
 }
-form .login-text h3 a:hover{
+form .Register-text h3 a:hover{
   text-decoration: underline;
 }
