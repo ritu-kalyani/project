@@ -10,6 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <title>Drinksify Beverage</title>
     <style>
         .animate span {
@@ -41,35 +42,9 @@
 </head>
 
 <body>
-    <nav>
-            <div class="logo">
-                <img src="images/logo.jpg" width="100" height="80" alt="">
-            </div>
-
-            <ul>
-                <li>
-                    <a class="nitem" href="home.html">Home</a>
-                </li>
-                <li>
-                    <a class="nitem" href="menu.html">Menu</a>
-                </li>
-                <li>
-                    <a class="nitem" href="about.html">About Us</a>
-                <li>
-                <li>
-                    <a class="nitem" href="contact.html">Contact Us</a>
-                </li>
-                <li>
-                    <a class="nitem" href="Faq.html">FAQ</a>
-                </li>
-                <li>
-                    <a class="nitem" href="login.html">login</a>
-                </li>
-                <li>
-                    <a class="nitem" href="">Cart</a>
-                </li>
-            </ul>
-    </nav>
+    <?php 
+        require_once "submodules/navbar.php";
+    ?>
 
     <div class="image">
         <img src="images/background.jpg" width= "100%" height="500" alt="">
@@ -110,48 +85,9 @@
         
     </div>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="footer-sub">
-                    <h4>Our Site</h4>
-                    <ul>
-                        <li><a href="about.html">about us</a></li>
-                        <li><a href="menu.html">our services</a></li>
-                    </ul>
-                </div>
-                <div class="footer-sub">
-                    <h4>get help</h4>
-                    <ul>
-                        <li><a href="Faq.html">FAQ</a></li>
-                        <li><a href="contact.html">Contact US</a></li>
-                    </ul>
-                </div>
-                <div class="footer-sub">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><a href="#">Email : info@Drinksify.com</a></li>
-                        <li><a href="#">phone :  +91.901234578</a></li>
-                    </ul>
-                </div>
-                <div class="footer-sub">
-                    <h4>follow us</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-   </footer>
- 
-    
-    <script>
-        $('.icon').click(function () {
-            $('span').toggleClass("cancel");
-        });
-    </script>
+    <?php 
+        require_once "submodules/footer.php";
+    ?>
 
 
 </body>
