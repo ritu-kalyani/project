@@ -26,13 +26,13 @@
             > A.: For sure! We will be glad to help you and propose Beverage that may be suitable for you.
             <p>&nbsp;</p>
             <h5 class="mt-0"><strong>Q.: I would like to order in a bulk &nbsp; for a party, how can I do it?</strong></h5><br>
-            > A.: Please contact us,&nbsp; telling us all your requirements we will revert with our best offer <br />Phone +91.901234578 e-mail info@Drinksify.com
+            > A.: Please contact us,&nbsp; telling us all your requirements we will revert with our best offer <br />Phone +44.3741523698 e-mail info@Drinksify.com
             <p>&nbsp;</p>
             <h5 class="mt-0"><strong>Q.:  Which are your specialities</strong></h5><br>
             > A.: We have a full range menu from Alcoholic to non Alcoholic beverages, all fresh and in season.<br /> We strongly suggest to look our menu!
             <p>&nbsp;</p>
             <h5 class="mt-0"><strong>Q.: Do you offer any specific made drinks?</strong></h5><br>
-            > A.: For any customised drinks first you have to talk to the manager to ask .<br /> Please let us know if you have any other concern.<br /> or contact Phone +91.901234578 e-mail info@Drinksify.com .
+            > A.: For any customised drinks first you have to talk to the manager to ask .<br /> Please let us know if you have any other concern.<br /> or contact Phone +44.3741523698 e-mail info@Drinksify.com .
             <p>&nbsp;</p>
             <h5 class="mt-0"><strong>Q.: Do you offer group discounts?</strong></h5><br>
             > A.: Rather than offer a discount to one particular group of guests, <br />we believe our responsibility is to make sure we're providing the best beverages value possible to every guest/customer

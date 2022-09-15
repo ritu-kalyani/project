@@ -20,7 +20,7 @@
                     <h4>Contact</h4>
                     <ul>
                         <li><a href="#">Email : info@Drinksify.com</a></li>
-                        <li><a href="#">phone :  +91.901234578</a></li>
+                        <li><a href="#">phone :  +44.3741523698</a></li>
                     </ul>
                 </div>
                 <div class="footer-sub">

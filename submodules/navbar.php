@@ -17,9 +17,6 @@
                     <a class="nitem" href="Faq.php">FAQ</a>
                 </li>
                 <li>
-                    <a class="nitem" href="">Tracker</a>
-                </li>
-                <li>
                     <a class="nitem" href="">Cart</a>
                 </li>
 

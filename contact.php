@@ -64,7 +64,7 @@
                     <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
                     <div class="text">
                         <h3>Phone</h3>
-                        <p>+91.901234578</p>
+                        <p>+44.3741523698</p>
                     </div>
                 </div>
                 <div class="box">
