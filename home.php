@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -45,6 +48,7 @@
 <body>
     <?php 
         require_once "submodules/navbar.php";
+        echo $_SESSION['uname'];
     ?>
 
     <div class="image">
