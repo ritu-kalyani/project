@@ -16,9 +16,19 @@
                 <li>
                     <a class="nitem" href="Faq.php">FAQ</a>
                 </li>
-                <li>
-                    <a class="nitem" href="login.php">login</a>
-                </li>
+                <?php
+                    if (isset($_SESSION["uname"])) {
+                        echo "<li>";
+                        echo "<a class='nitem' href='logout.php'>Logout</a>";
+                        echo "</li>";
+                    }
+
+                    else {
+                        echo "<li>";
+                        echo "<a class='nitem' href='login.php'>Login</a>";
+                        echo "</li>";
+                    }
+                ?>
                 <li>
                     <a class="nitem" href="cart.php">Cart</a>
                 </li>
