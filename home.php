@@ -13,6 +13,7 @@
     <!-- jQuery CDN -->
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <title>Drinksify Beverage</title>
@@ -96,12 +97,17 @@
 
     <script>
         $(".cartBtn").on("click", function() {
-
+            
             $.ajax({
                 url : "ajax/addToCart.php?id=" + this.id,
                 type: "GET",
                 success: function (data) {
                     console.log("success");
+                    swal({
+                        title: "Item Added to Cart",
+                        text: "The item you selected has been added to the Cart",
+                        icon: "success",
+                    });
                 },
 
                 error: function (err) {

@@ -47,7 +47,6 @@
                         
                         <?php
                             if (isset($_SESSION['cart'])) {
-                                print_r($_SESSION['cart']);
                                 foreach ($_SESSION['cart'] as $row) {
                                     echo "<tr class='row". $row["pid"] ."'>";
                                     echo "<td>" . $row["pid"] . "</td>";
