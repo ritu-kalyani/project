@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/items.css">
     <link rel="stylesheet" href="css/footer.css">
-    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <!-- jQuery CDN -->
+    <script src="js/jquery-3.5.1.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -75,7 +76,7 @@
                     echo "</div>";
                 echo "<p>" . $row["description"];
                 echo "<b> Category: ". $row["category"] . "</b></p>";
-                echo "<button>Add to Cart</button>";
+                echo "<a style='cursor: pointer;' id='" . $row["pid"] . "' class='cartBtn'>Add to Cart</a>";
                 echo "</div>";
                 echo "</div>";
             }
@@ -89,6 +90,29 @@
         require_once "submodules/footer.php";
     ?>
 
+    <script>
+        $(".cartBtn").on("click", function() {
+            if (localStorage.getItem("items") == null) {
+                localStorage.setItem("items", this.id)
+            }
+
+            else {
+                items = localStorage.getItem("items");
+                localStorage.setItem("items", items + "," + this.id)
+            }
+
+            $.ajax({
+                url: "ajax/addToCart.php?id=" + localStorage.getItem("items"),
+                type: "GET",
+                success: function (data) {
+                    console.log("success");
+                },
+                error: function(error) {
+                    console.log("error");
+                }
+            })
+        })
+    </script>
 
 </body>
 

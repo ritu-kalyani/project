@@ -20,7 +20,7 @@
                     <a class="nitem" href="login.php">login</a>
                 </li>
                 <li>
-                    <a class="nitem" href="">Cart</a>
+                    <a class="nitem" href="cart.php">Cart</a>
                 </li>
             </ul>
     </nav>
