@@ -16,9 +16,9 @@ $row = $result->fetch_assoc();
     );
 
 if (isset($_SESSION['cart'])) {
-    $_SESSION['cart'][sizeof($_SESSION['cart'])] = $arr;
+    $_SESSION['cart'][$item] = $arr;
 }
 
 else {
-    $_SESSION['cart'][0] = $arr;
+    $_SESSION['cart'][$item] = $arr;
 }

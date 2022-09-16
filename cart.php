@@ -30,6 +30,7 @@
         <div class="col-lg-12 text-center border rounded bg-light my-3">
             <h1>My Cart</h1>
         </div>
+
         <div class="col-lg-8">
             <div class="card wish-list mb-3">
                 <table class="table text-center">
@@ -47,11 +48,11 @@
                         <?php
                             if (isset($_SESSION['cart'])) {
                                 foreach ($_SESSION['cart'] as $row) {
-                                    echo "<tr>";
+                                    echo "<tr class='row". $row["pid"] ."'>";
                                     echo "<td>" . $row["pid"] . "</td>";
                                     echo "<td>" . $row["pname"] . "</td>";
                                     echo "<td id='price" . $row["pid"]. "'>" . $row["price"] . "</td>";
-                                    echo "<td><input id='" . $row["pid"] . "' class='quantity' type='number' min=1 value=" . $row["quantity"] . " </input></td>";
+                                    echo "<td><input id='" . $row["pid"] . "' class='quantity' type='number' min=0 value=" . $row["quantity"] . " </input></td>";
                                     echo "<td id='total" . $row["pid"] . "' class='total'>" . $row["total"] . "</td>";
                                     echo "</tr>";
                                 } 
@@ -115,10 +116,19 @@
         $(".finalTotal").html(value);
     }
     $(".quantity").on("change", function() {
-        var value = $("#"+this.id).val()
+        var value = parseInt($("#"+this.id).val())
+
+        if (value == 0) {
+            $(".row"+ this.id).hide();
+            $.ajax({
+                url: "ajax/removeFromCart.php?id=" + this.id,
+                method: "GET"
+            })
+        }
         var price = parseInt($("#price" + this.id).html());
         var ID = []
-        var total = price * parseInt(value);
+
+        var total = price * value;
         $("#total" + this.id).html(total);
 
         calculateCart();
