@@ -96,22 +96,15 @@
 
     <script>
         $(".cartBtn").on("click", function() {
-            if (localStorage.getItem("items") == null) {
-                localStorage.setItem("items", this.id)
-            }
-
-            else {
-                items = localStorage.getItem("items");
-                localStorage.setItem("items", items + "," + this.id)
-            }
 
             $.ajax({
-                url: "ajax/addToCart.php?id=" + localStorage.getItem("items"),
+                url : "ajax/addToCart.php?id=" + this.id,
                 type: "GET",
                 success: function (data) {
                     console.log("success");
                 },
-                error: function(error) {
+
+                error: function (err) {
                     console.log("error");
                 }
             })

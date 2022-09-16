@@ -1,6 +1,24 @@
 <?php
+session_start();
+require_once "../submodules/_dbconnect.php";
 
-$items = $_GET["id"];
-$items = implode(',',array_unique(explode(',', $items)));
-setcookie("status", "gettingCreated");
-setcookie("items", $items, time() + 2 * 24 * 60 * 60,  "/");
+$item = $_GET["id"];
+$sql = "SELECT * FROM product WHERE pid='" . $item . "'";
+$result = $conn->query($sql);
+    
+$row = $result->fetch_assoc();
+    $arr = array(
+        "pid" => $row["pid"],
+        "pname" => $row["pname"],
+        "price" => $row["price"],
+        "quantity" => 1,
+        "total" => $row["price"]
+    );
+
+if (isset($_SESSION['cart'])) {
+    $_SESSION['cart'][sizeof($_SESSION['cart'])] = $arr;
+}
+
+else {
+    $_SESSION['cart'][0] = $arr;
+}
