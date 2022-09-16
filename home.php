@@ -49,7 +49,6 @@
 <body>
     <?php 
         require_once "submodules/navbar.php";
-        echo $_SESSION['uname'];
     ?>
 
     <div class="image">
@@ -91,9 +90,11 @@
         
     </div>
 
+    
     <?php 
         require_once "submodules/footer.php";
     ?>
+
 
     <script>
         $(".cartBtn").on("click", function() {

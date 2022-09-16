@@ -86,13 +86,62 @@
                                 Online Payment 
                             </label>
                         </div><br>
-                        <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#checkoutModal">go to checkout</button>
+                        <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#checkoutModal">Checkout</button>
                     </div>
                 </div>
                 
             </div>
     </div>
 </div>
+<div class="modal fade" id="checkoutModal" tabindex="-1" role="dialog" aria-labelledby="checkoutModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="checkoutModal">Enter Your Details:</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form action="/" method="post">
+                <div class="form-group">
+                    <b><label for="address">Address:</label></b>
+                    <input class="form-control" id="address" name="address" placeholder="1234 Main St" type="text" required minlength="3" maxlength="500">
+                </div>
+                <div class="form-group">
+                    <b><label for="address1">Address Line 2:</label></b>
+                    <input class="form-control" id="address1" name="address1" placeholder="near st, Surat, Gujarat" type="text">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6 mb-0">
+                        <b><label for="phone">Phone No:</label></b>
+                        <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon">+91</span>
+                        </div>
+                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="xxxxxxxxxx" required pattern="[0-9]{10}" maxlength="10">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6 mb-0">
+                        <b><label for="zipcode">Zip Code:</label></b>
+                        <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="xxxxxx" required pattern="[0-9]{6}" maxlength="6">                    
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <input type="hidden" name="amount" value=""> <!-- Total Price -->
+                    <button type="submit" name="checkout" class="btn btn-success">Order</button>
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>         
+    <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
+    
 <script>
 
     calculateCart();
@@ -142,5 +191,6 @@
 
     
 </script>
+
 </body>
 </html>
