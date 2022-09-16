@@ -32,6 +32,7 @@
         </div>
 
         <div class="col-lg-8">
+            
             <div class="card wish-list mb-3">
                 <table class="table text-center">
                     <thead class="thead-light">
@@ -103,21 +104,21 @@
             </button>
         </div>
         <div class="modal-body">
-            <form action="/" method="post">
+            <form method="post">
                 <div class="form-group">
                     <b><label for="address">Address:</label></b>
-                    <input class="form-control" id="address" name="address" placeholder="1234 Main St" type="text" required minlength="3" maxlength="500">
+                    <input class="form-control" id="address" name="address" placeholder="Address line 1" type="text" required minlength="3" maxlength="500">
                 </div>
                 <div class="form-group">
                     <b><label for="address1">Address Line 2:</label></b>
-                    <input class="form-control" id="address1" name="address1" placeholder="near st, Surat, Gujarat" type="text">
+                    <input class="form-control" id="address1" name="address1" placeholder="Address line 2" type="text">
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6 mb-0">
                         <b><label for="phone">Phone No:</label></b>
                         <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon">+91</span>
+                            <span class="input-group-text" id="basic-addon">+44</span>
                         </div>
                         <input type="tel" class="form-control" id="phone" name="phone" placeholder="xxxxxxxxxx" required pattern="[0-9]{10}" maxlength="10">
                         </div>
@@ -130,7 +131,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                     <input type="hidden" name="amount" value=""> <!-- Total Price -->
-                    <button type="submit" name="checkout" class="btn btn-success">Order</button>
+                    <button type="submit" name="checkout" class="btn btn-success" id="checkout">Order</button>
                 </div>
             </form>
         </div>
@@ -143,7 +144,6 @@
     <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
     
 <script>
-
     calculateCart();
 
     function calculateCart() {
@@ -180,6 +180,16 @@
                 }
             })
         }
+
+        else {
+            $.ajax({
+                url: "ajax/updateCart.php?id=" + this.id + "&quantity=" + value,
+                method: "GET",
+                success: function(data) {
+                    console.log("Update success")
+                }
+            })
+        }
         var price = parseInt($("#price" + this.id).html());
         var ID = []
 
@@ -189,6 +199,33 @@
         calculateCart();
     })
 
+    $("#checkout").on("click", function() {
+        var address = $("#address").val() + " " + $("#address1").val();
+        var phoneNo = $("#phone").val();
+        var zipCode = $("#zipcode").val();
+        var total = parseInt($(".finalTotal").html());
+
+        $.ajax({
+            url: "ajax/placeOrder.php?address=" + address + "&phoneNo=" + phoneNo + "&zipcode=" + zipCode + "&total=" + total,
+            type: "GET",
+            success: function(data) {
+                swal({
+                        title: "Order placed",
+                        text: "The order has been successfully placed",
+                        icon: "success",
+                    });
+            },
+            error: function(error) {
+                console.log(error);
+                swal({
+                        title: "Order not placed",
+                        text: "We have encountered an error while placing your order",
+                        icon: "error",
+                    });
+            }
+
+        })
+    })
     
 </script>
 
