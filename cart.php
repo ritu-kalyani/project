@@ -47,6 +47,7 @@
                         
                         <?php
                             if (isset($_SESSION['cart'])) {
+                                print_r($_SESSION['cart']);
                                 foreach ($_SESSION['cart'] as $row) {
                                     echo "<tr class='row". $row["pid"] ."'>";
                                     echo "<td>" . $row["pid"] . "</td>";
@@ -122,7 +123,13 @@
             $(".row"+ this.id).hide();
             $.ajax({
                 url: "ajax/removeFromCart.php?id=" + this.id,
-                method: "GET"
+                method: "GET",
+                success: function(data) {
+                    console.log("success");
+                },
+                error: function(error) {
+                    console.log("error");
+                }
             })
         }
         var price = parseInt($("#price" + this.id).html());

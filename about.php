@@ -37,7 +37,7 @@
                     of drinks. So Grab it and lets drinksify the beverage.
                     <br>
                     If you have any kind of query do contact us :
-                    <br> Phone +91.901234578 
+                    <br> Phone +44.3741523698 
                     <br> e-mail info@Drinksify.com
                 </p>
             </div>
